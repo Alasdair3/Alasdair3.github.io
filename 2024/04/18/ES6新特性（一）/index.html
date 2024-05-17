@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ES6新特性（一） | TQ的藏宝阁</title><meta name="author" content="TQ"><meta name="copyright" content="TQ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、什么是ES6ES全称为ECMAScript，它是由国际标准化组织ECMA（全称：European Computer Manufacturers Association）欧洲计算机制造商协会制定的一项脚本语言的标准化规范。JavaScript就实现了这套标准。ES6中的6代表的是版本，从2015年6月份发布的版本及其后续版本统称为ES6，从2015年开始，每年的6月份都会发布新版本。目前各大浏览">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6新特性（一）">
+<meta property="og:url" content="http://example.com/2024/04/18/ES6%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:site_name" content="TQ的藏宝阁">
+<meta property="og:description" content="一、什么是ES6ES全称为ECMAScript，它是由国际标准化组织ECMA（全称：European Computer Manufacturers Association）欧洲计算机制造商协会制定的一项脚本语言的标准化规范。JavaScript就实现了这套标准。ES6中的6代表的是版本，从2015年6月份发布的版本及其后续版本统称为ES6，从2015年开始，每年的6月份都会发布新版本。目前各大浏览">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2024-04-18T03:00:16.000Z">
+<meta property="article:modified_time" content="2024-05-17T03:58:48.197Z">
+<meta property="article:author" content="TQ">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="ES6">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/images/favicon.png"><link rel="canonical" href="http://example.com/2024/04/18/ES6%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%88%E4%B8%80%EF%BC%89/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ES6新特性（一）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-17 11:58:48'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/source/css/myStyle.css"><meta name="generator" content="Hexo 7.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/loading.gif" data-original="/images/author.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 存档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="TQ的藏宝阁"><span class="site-name">TQ的藏宝阁</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 存档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ES6新特性（一）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-18T03:00:16.000Z" title="发表于 2024-04-18 11:00:16">2024-04-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-17T03:58:48.197Z" title="更新于 2024-05-17 11:58:48">2024-05-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ES6/">ES6</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="ES6新特性（一）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="一、什么是ES6"><a href="#一、什么是ES6" class="headerlink" title="一、什么是ES6"></a>一、什么是ES6</h1><h6 id="ES全称为ECMAScript，它是由国际标准化组织ECMA（全称：European-Computer-Manufacturers-Association）欧洲计算机制造商协会制定的一项脚本语言的标准化规范。JavaScript就实现了这套标准。ES6中的6代表的是版本，从2015年6月份发布的版本及其后续版本统称为ES6，从2015年开始，每年的6月份都会发布新版本。目前各大浏览器产商也都已经支持ES6。"><a href="#ES全称为ECMAScript，它是由国际标准化组织ECMA（全称：European-Computer-Manufacturers-Association）欧洲计算机制造商协会制定的一项脚本语言的标准化规范。JavaScript就实现了这套标准。ES6中的6代表的是版本，从2015年6月份发布的版本及其后续版本统称为ES6，从2015年开始，每年的6月份都会发布新版本。目前各大浏览器产商也都已经支持ES6。" class="headerlink" title="ES全称为ECMAScript，它是由国际标准化组织ECMA（全称：European Computer Manufacturers Association）欧洲计算机制造商协会制定的一项脚本语言的标准化规范。JavaScript就实现了这套标准。ES6中的6代表的是版本，从2015年6月份发布的版本及其后续版本统称为ES6，从2015年开始，每年的6月份都会发布新版本。目前各大浏览器产商也都已经支持ES6。"></a>ES全称为ECMAScript，它是由国际标准化组织ECMA（全称：European Computer Manufacturers Association）欧洲计算机制造商协会制定的一项脚本语言的标准化规范。JavaScript就实现了这套标准。ES6中的6代表的是版本，从2015年6月份发布的版本及其后续版本统称为ES6，从2015年开始，每年的6月份都会发布新版本。目前各大浏览器产商也都已经支持ES6。</h6><h1 id="二、ES6的新特性有哪些？"><a href="#二、ES6的新特性有哪些？" class="headerlink" title="二、ES6的新特性有哪些？"></a>二、ES6的新特性有哪些？</h1><p><code>1.新增了块级作用域（let，const）</code></p>
+<p><code>2.提供了定义类的语法糖（class）</code></p>
+<p><code>3.新增了一种基本数据类型（Symbol）</code></p>
+<p><code>4.新增了变量的解构赋值</code></p>
+<p><code>5.函数参数允许设置默认值，引入了rest参数，新增了箭头函数。</code></p>
+<p><code>6.数组新增了一些API，如isArray / from / of 方法；数组实例新增了 entries()，keys() 和 values() 等方法。</code></p>
+<p><code>7.对象和数组新增了扩展运算符</code></p>
+<p><code>8.ES6新增了模块化（import / export）</code></p>
+<p><code>9.ES6新增了Set和Map数据结构。</code></p>
+<p><code>10.ES6原生提供Proxy构造函数，用来生成Proxy实例</code></p>
+<p><code>11.ES6新增了生成器（Generator）和遍历器（Iterator）</code></p>
+<p>解构：分解数据结构。<br>赋值：为变量赋值。<br>解构赋值：从数组或者对象中提取值，按照对应的位置，对变量赋值（在数组解构中，只 要解构的目标可以遍历，就可以实现解构赋值）。</p>
+<h3 id="1：数组解构赋值的特点："><a href="#1：数组解构赋值的特点：" class="headerlink" title="1：数组解构赋值的特点："></a>1：数组解构赋值的特点：</h3><p>在数组解构中，左边用中括号包裹任意个变量，右边则是一个真实的数组，按照 一 一 对应的关系进行赋值，在赋值过程中有以下几种情况：</p>
+<p><code>1.1：声明的变量数量与数组的元素数量一致：</code></p>
+<p><code>1.2：声明的变量的数量大于数组的元素的数量：</code></p>
+<p><code>1.3：声明的变量的数量小于数组的元素的数量：</code></p>
+<p><code>1.4：使用剩余运算符进行解构赋值：</code></p>
+<p><code>1.5：可遍历对象 例如：字符串：</code></p>
+<p>var、let、const各自的特点及其区别</p>
+<p><code>在ES6之前只有全局作用域和局部作用域，ES6新增了块级作用域let和const,下面将简单介绍var、let和const的特点以及区别。</code></p>
+<p><code>块级作用域：只能在声明的区域（代码块）中使用，不能在声明的区域的外部使用，否则报（xxx is not defined）。</code></p>
+<p><code>var：使用var声明的变量，其作用域为该变量所在的函数内，且存在变量提升现象（变量提升：可以先使用再声明），不会受到块级作用域的影响</code></p>
+<p><code>let：ES6新增的块级作用域</code><br><code>1：使用let声明的变量具有块级作用域:，只能在当前声明的代码块中使用，必须要先声明再使用</code><br><code>2：具有暂时性死区特性。</code></p>
+<p><code>const：ES6中新增的常量（常量：值（内存地址）不可更改的量）。特点如下：</code></p>
+<p><code>3.1：具有块级作用域的特点，只能在当前声明的代码块中使用，必须要先声明再使用。</code></p>
+<p><code>3.2：声明常量时必须赋值，如果不赋值报错：Missing initializer in const declaration（在const声明中未初始化）。</code></p>
+<p><code>3.3：const声明的常量不可更改。</code></p>
+<p><code>3.4：使用const声明的常量如果是基本数据类型（比如：数字、字符串），一旦赋值，值不可以更改；如果是引用数据类型（数组，对象），不能重新赋值，但是可以更改数据结构内部的值（比如修改对象中的属性）。</code></p>
+<p>谈谈我对[箭头函数]的理解</p>
+<p><code>1：箭头函数：ES6新增的定义函数的方式。</code></p>
+<p><code>2：作用：用来简化函数定义的语法。</code></p>
+<p><code>3：箭头函数的特点：</code></p>
+<p><code>3.1：可以将箭头函数赋值给一个变量，变量名字就是函数的名字，通过变量名字调用函数。</code></p>
+<p><code>3.2：如果函数体中只有一行代码，且代码的执行结果就是返回值，可以省略大括号。</code></p>
+<p><code>3.3：如果形参只有一个，可以省略小括号（如果没有形参，小括号不能省略）。</code></p>
+<p>Map数据结构</p>
+<p><code>1：Map：类似于对象，是一个存储键值对的集合，但是‘键’’的范围不仅仅是字符串，所有类型的值包括对象都可以当做键。</code></p>
+<p><code>2：创建Map集合：</code></p>
+<p><code>2.1：创建Map集合有两种：1.直接new Map()创建实例对象；2.接收一个数组作为参数来创建实例对象（该数组的成员必须是一个个表示键值对的数组）。</code></p>
+<p><code>3：Map集合常用属性和方法：</code></p>
+<p><code>3.1：.has(key);查找key,返回布尔值。</code></p>
+<p><code>3.2：.get(key) 根据key查找value。</code></p>
+<p><code>3.3：.set(key,value) 添加键值对。</code></p>
+<p><code>3.4：.size获取存储的数量。</code></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">TQ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/04/18/ES6%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%88%E4%B8%80%EF%BC%89/">http://example.com/2024/04/18/ES6%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%88%E4%B8%80%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">TQ的藏宝阁</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Web/">Web</a><a class="post-meta__tags" href="/tags/ES6/">ES6</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/05/07/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96%E7%9A%84%E5%BA%94%E7%94%A8/" title="节流和防抖的应用"><img class="cover" src="/images/loading.gif" data-original="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">节流和防抖的应用</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/loading.gif" data-original="/images/author.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">TQ</div><div class="author-info__description">车马慢慢行远方</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/mjh1667002013" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=728831102&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:1976083684@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFES6"><span class="toc-number">1.</span> <span class="toc-text">一、什么是ES6</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#ES%E5%85%A8%E7%A7%B0%E4%B8%BAECMAScript%EF%BC%8C%E5%AE%83%E6%98%AF%E7%94%B1%E5%9B%BD%E9%99%85%E6%A0%87%E5%87%86%E5%8C%96%E7%BB%84%E7%BB%87ECMA%EF%BC%88%E5%85%A8%E7%A7%B0%EF%BC%9AEuropean-Computer-Manufacturers-Association%EF%BC%89%E6%AC%A7%E6%B4%B2%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%88%B6%E9%80%A0%E5%95%86%E5%8D%8F%E4%BC%9A%E5%88%B6%E5%AE%9A%E7%9A%84%E4%B8%80%E9%A1%B9%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E7%9A%84%E6%A0%87%E5%87%86%E5%8C%96%E8%A7%84%E8%8C%83%E3%80%82JavaScript%E5%B0%B1%E5%AE%9E%E7%8E%B0%E4%BA%86%E8%BF%99%E5%A5%97%E6%A0%87%E5%87%86%E3%80%82ES6%E4%B8%AD%E7%9A%846%E4%BB%A3%E8%A1%A8%E7%9A%84%E6%98%AF%E7%89%88%E6%9C%AC%EF%BC%8C%E4%BB%8E2015%E5%B9%B46%E6%9C%88%E4%BB%BD%E5%8F%91%E5%B8%83%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%85%B6%E5%90%8E%E7%BB%AD%E7%89%88%E6%9C%AC%E7%BB%9F%E7%A7%B0%E4%B8%BAES6%EF%BC%8C%E4%BB%8E2015%E5%B9%B4%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%AF%8F%E5%B9%B4%E7%9A%846%E6%9C%88%E4%BB%BD%E9%83%BD%E4%BC%9A%E5%8F%91%E5%B8%83%E6%96%B0%E7%89%88%E6%9C%AC%E3%80%82%E7%9B%AE%E5%89%8D%E5%90%84%E5%A4%A7%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BA%A7%E5%95%86%E4%B9%9F%E9%83%BD%E5%B7%B2%E7%BB%8F%E6%94%AF%E6%8C%81ES6%E3%80%82"><span class="toc-number">1.0.0.0.0.1.</span> <span class="toc-text">ES全称为ECMAScript，它是由国际标准化组织ECMA（全称：European Computer Manufacturers Association）欧洲计算机制造商协会制定的一项脚本语言的标准化规范。JavaScript就实现了这套标准。ES6中的6代表的是版本，从2015年6月份发布的版本及其后续版本统称为ES6，从2015年开始，每年的6月份都会发布新版本。目前各大浏览器产商也都已经支持ES6。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81ES6%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">二、ES6的新特性有哪些？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%9A%E6%95%B0%E7%BB%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-number">2.0.1.</span> <span class="toc-text">1：数组解构赋值的特点：</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/05/12/%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E7%9A%84%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95/" title="前端数组的操作方法"><img src="/images/loading.gif" data-original="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端数组的操作方法"/></a><div class="content"><a class="title" href="/2024/05/12/%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E7%9A%84%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95/" title="前端数组的操作方法">前端数组的操作方法</a><time datetime="2024-05-12T03:00:16.000Z" title="发表于 2024-05-12 11:00:16">2024-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/07/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96%E7%9A%84%E5%BA%94%E7%94%A8/" title="节流和防抖的应用"><img src="/images/loading.gif" data-original="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="节流和防抖的应用"/></a><div class="content"><a class="title" href="/2024/05/07/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96%E7%9A%84%E5%BA%94%E7%94%A8/" title="节流和防抖的应用">节流和防抖的应用</a><time datetime="2024-05-07T09:00:16.000Z" title="发表于 2024-05-07 17:00:16">2024-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/18/ES6%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%88%E4%B8%80%EF%BC%89/" title="ES6新特性（一）"><img src="/images/loading.gif" data-original="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ES6新特性（一）"/></a><div class="content"><a class="title" href="/2024/04/18/ES6%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%88%E4%B8%80%EF%BC%89/" title="ES6新特性（一）">ES6新特性（一）</a><time datetime="2024-04-18T03:00:16.000Z" title="发表于 2024-04-18 11:00:16">2024-04-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By TQ</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body></html>
